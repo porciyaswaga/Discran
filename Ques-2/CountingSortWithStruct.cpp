@@ -11,14 +11,14 @@ struct Human {
 
 
 void CountingSort(std::vector<Human>& A) {
-    int n = A[0].age;
-    std::vector<int> C(n + 1, 0);
-    std::vector<Human> B(A.size());
+    int n = 0;
     for (const auto& human : A) {
         if (human.age > n) {
             n = human.age;
         }
     }
+    std::vector<int> C(n + 1, 0);
+    std::vector<Human> B(A.size());
     for (int i = 0; i < A.size(); ++i) {
         C[A[i].age]++; 
     }
